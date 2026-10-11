@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Estimate university mobility credit recognition using curriculum and syllabus similarity." />
+  <title>Credit Compass Georgia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Credit Compass home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>credit<span>compass</span></span>
+      </a>
+
+      <div class="profile-card">
+        <div class="avatar" id="profileAvatar">JD</div>
+        <div>
+          <strong id="profileName">John Doe</strong>
+          <span id="profileSubtitle">Demo mobility profile</span>
+        </div>
+        <button class="icon-button" aria-label="Profile options">•••</button>
+      </div>
+
+      <nav class="side-nav" aria-label="Application sections">
+        <button class="nav-item active" data-scroll="overview"><span class="nav-icon">⌁</span>Overview</button>
+        <button class="nav-item" data-action="open-transcript"><span class="nav-icon">≡</span>My transcript <span class="count" id="courseCount">20</span></button>
+        <button class="nav-item" data-scroll="matches"><span class="nav-icon">⇄</span>Course matches</button>
+        <button class="nav-item" data-action="open-sources"><span class="nav-icon">↗</span>Data sources</button>
+      </nav>
+
+      <div class="journey-card">
+        <div class="eyebrow">Study journey</div>
+        <div id="journeyList"></div>
+      </div>
+
+      <div class="sidebar-note">
+        <span class="pulse"></span>
+        <div><strong>Official data · phase 1</strong><span>TSU + GTU · 96 curriculum entries</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Mobility workspace</div>
+          <h1>See what moves with you.</h1>
+        </div>
+        <div class="top-actions">
+          <span class="update-chip"><span></span>Curricula checked Oct 2026</span>
+          <button class="outline-button clean-button" data-action="start-clean">Start clean plan</button>
+          <button class="outline-button" data-action="open-transcript">Edit transcript</button>
+        </div>
+      </header>
+
+      <section class="planner-card">
+        <div class="planner-copy">
+          <span class="section-number">01</span>
+          <div>
+            <h2>Choose a destination</h2>
+            <p>We compare passed courses against the selected curriculum and explain every estimate.</p>
+          </div>
+        </div>
+        <div class="select-grid">
+          <label>
+            University
+            <span class="select-wrap">
+              <select id="destinationSelect"></select>
+            </span>
+          </label>
+          <label>
+            Faculty / program
+            <span class="select-wrap">
+              <select id="programSelect"></select>
+            </span>
+          </label>
+          <label>
+            Curriculum version
+            <span class="select-wrap">
+              <select id="cohortSelect">
+                <option>2025–2026</option>
+              </select>
+            </span>
+          </label>
+          <button class="primary-button" id="analyzeButton"><span>Recalculate</span><span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <section class="results-heading">
+        <div>
+          <span class="section-number">02</span>
+          <div><h2>Your mobility estimate</h2><p id="resultSubtitle">Based on 15 passed courses from 2 institutions</p></div>
+        </div>
+        <span class="estimate-label">Estimate · not an official decision</span>
+      </section>
+
+      <section class="metric-grid" aria-label="Mobility estimate summary">
+        <article class="metric-card hero-metric">
+          <div class="metric-label">Likely placement</div>
+          <div class="placement-row">
+            <strong id="semesterMetric">Semester 5</strong>
+            <span id="placementConfidence">High confidence</span>
+          </div>
+          <div class="progress-track"><span id="semesterProgress"></span></div>
+          <p id="placementNote">Core prerequisites through year two are mostly covered.</p>
+        </article>
+        <article class="metric-card">
+          <div class="metric-icon mint">✓</div>
+          <div class="metric-label">Core credit</div>
+          <strong><span id="recognizedMetric">0</span> <small>ECTS</small></strong>
+          <p id="recognizedCourses">0 core requirements</p>
+        </article>
+        <article class="metric-card">
+          <div class="metric-icon lilac">↗</div>
+          <div class="metric-label">Elective credit</div>
+          <strong><span id="electiveMetric">0</span> <small>ECTS</small></strong>
+          <p>Matches an elective requirement</p>
+        </article>
+        <article class="metric-card">
+          <div class="metric-icon sky">◇</div>
+          <div class="metric-label">Free credit</div>
+          <strong><span id="freeMetric">0</span> <small>ECTS</small></strong>
+          <p>Unused passed courses within the programme limit</p>
+        </article>
+        <article class="metric-card">
+          <div class="metric-icon amber">!</div>
+          <div class="metric-label">Needs review</div>
+          <strong><span id="reviewMetric">0</span> <small>courses</small></strong>
+          <p>Borderline content or ECTS</p>
+        </article>
+      </section>
+
+      <section class="credit-load-panel standard" id="creditLoadPanel" aria-live="polite"></section>
+
+      <section class="insight-strip" id="insightStrip">
+        <div class="insight-icon">✦</div>
+        <div><strong>Best path found</strong><p id="insightText">Your programming sequence transfers especially well.</p></div>
+        <button data-action="open-transcript">Review inputs →</button>
+      </section>
+
+      <section class="alternatives-section" aria-labelledby="alternativesTitle">
+        <div class="alternatives-heading">
+          <div>
+            <span class="section-number">03</span>
+            <div><h2 id="alternativesTitle">Compare your best destinations</h2><p>All available programs are scored against the same transcript.</p></div>
+          </div>
+          <span class="ranking-note">Ranked by recognized ECTS, then missing requirements</span>
+        </div>
+        <div class="alternatives-grid" id="alternativesGrid"></div>
+      </section>
+
+      <section class="matches-section" id="matches">
+        <div class="matches-header">
+          <div>
+            <span class="section-number">04</span>
+            <div><h2>How we matched your courses</h2><p>Semantic syllabus concepts, learning outcomes, ECTS, prerequisites and curriculum versions are evaluated separately. Source courses are never reused.</p></div>
+          </div>
+          <div class="filter-tabs" role="tablist">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="strong">Strong</button>
+            <button data-filter="review">Review</button>
+            <button data-filter="missing">Missing</button>
+          </div>
+        </div>
+
+        <div class="match-list" id="matchList"></div>
+      </section>
+
+      <footer>
+        <div><span class="brand-mark small"><span></span></span><strong>Transparent by design.</strong></div>
+        <p>Every estimate shows its evidence. Final recognition belongs to the receiving university.</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer" id="transcriptDrawer" aria-hidden="true" aria-label="Edit transcript">
+    <div class="drawer-header">
+      <div><span class="eyebrow">Your inputs</span><h2>Transcript</h2></div>
+      <button class="drawer-close" data-action="close-drawers" aria-label="Close">×</button>
+    </div>
+    <p class="drawer-intro">Toggle a course result to see how it changes the mobility estimate. Failed courses earn no transferable credit.</p>
+    <details class="add-course-panel">
+      <summary><span>＋</span> Add a course</summary>
+      <form id="addCourseForm" class="course-form">
+        <div class="form-row two">
+          <label>University<input id="newInstitution" required placeholder="e.g. TSU" /></label>
+          <label>Semester<input id="newPeriod" required placeholder="e.g. Semester 3 · 2025" /></label>
+        </div>
+        <label>Course title<input id="newTitle" required placeholder="e.g. Machine Learning" /></label>
+        <div class="form-row two">
+          <label>Course code<input id="newCode" placeholder="Optional" /></label>
+          <label>ECTS<input id="newEcts" required type="number" min="1" max="30" value="5" /></label>
+        </div>
+        <label>Syllabus topics<input id="newTopics" required placeholder="algorithms, regression, neural networks" /></label>
+        <label class="checkbox-label"><input id="newPassed" type="checkbox" checked /> Course was passed</label>
+        <button class="primary-button full" type="submit">Add to transcript</button>
+      </form>
+    </details>
+    <div class="transcript-tools"><span>Saved in this browser</span><button id="resetTranscript" type="button">Reset demo</button></div>
+    <div id="transcriptList"></div>
+    <div class="drawer-footer"><button class="primary-button full" data-action="close-drawers">Apply and recalculate</button></div>
+  </aside>
+
+  <aside class="drawer" id="sourcesDrawer" aria-hidden="true" aria-label="Data sources">
+    <div class="drawer-header">
+      <div><span class="eyebrow">Evidence</span><h2>Public sources</h2></div>
+      <button class="drawer-close" data-action="close-drawers" aria-label="Close">×</button>
+    </div>
+    <p class="drawer-intro"><strong>Phase 1 now includes official curriculum imports for TSU Computer Science and GTU Computer Information Technologies.</strong> Each imported course retains its published code, ECTS, suggested semester, curriculum version and source. Other visible programmes remain marked as pending until their curriculum is verified.</p>
+    <div class="source-list" id="sourceList"></div>
+  </aside>
+
+  <section class="builder-modal" id="builderModal" aria-hidden="true" aria-label="Build a clean mobility plan">
+    <header class="builder-header">
+      <a class="brand builder-brand" href="#" aria-label="Credit Compass home"><span class="brand-mark" aria-hidden="true"><span></span></span><span>credit<span>compass</span></span></a>
+      <div class="builder-progress"><span class="active">1</span><b>Build transcript</b><i></i><span>2</span><b>Compare</b></div>
+      <button class="drawer-close" data-action="close-builder" aria-label="Close clean plan">×</button>
+    </header>
+    <div class="builder-content">
+      <div class="builder-intro">
+        <span class="eyebrow">No account needed</span>
+        <h2>Build your study history.</h2>
+        <p>Add every semester you studied. Choose its university, faculty and specialty, then search the public course catalogue.</p>
+      </div>
+      <div class="builder-empty" id="builderEmpty">
+        <div class="empty-orbit">＋</div>
+        <h3>Begin with your first semester</h3>
+        <p>You can add, remove, and reorder your study history before calculating.</p>
+        <button class="primary-button" type="button" data-action="add-semester"><span>Add semester</span><span>→</span></button>
+      </div>
+      <div class="semester-builder-list" id="semesterBuilderList"></div>
+    </div>
+    <footer class="builder-footer">
+      <div><strong id="builderSummary">No semesters yet</strong><span id="builderLoadSummary">30 ECTS/semester standard · 60/year standard · 75/year maximum</span></div>
+      <div>
+        <button class="outline-button" type="button" data-action="add-semester">＋ Add semester</button>
+        <button class="primary-button" type="button" id="calculateCleanPlan"><span>Calculate mobility</span><span>→</span></button>
+      </div>
+    </footer>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

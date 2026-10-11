@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "1.0",
+  "lastVerified": "2026-10-05",
+  "scope": "Phase 1 official curriculum import",
+  "sources": [
+    {
+      "name": "TSU Computer Science curriculum",
+      "note": "Official 2021 curriculum PDF with course codes, ECTS, prerequisites and semester plan.",
+      "url": "https://tsu.ge/assets/media/files/71/academic/2021/502021_d1.pdf",
+      "type": "Official curriculum PDF"
+    },
+    {
+      "name": "GTU Computer Information Technologies curriculum",
+      "note": "Official 2024/25 curriculum PDF with the complete eight-semester course list and ECTS.",
+      "url": "https://gtu.ge/pdf/programs/bach/ims/file13.pdf",
+      "type": "Official curriculum PDF"
+    },
+    {
+      "name": "GTU bachelor programme directory",
+      "note": "Official programme identity, accreditation and 240 ECTS confirmation.",
+      "url": "https://gtu.ge/apply/bachelor/ims/geo.php/",
+      "type": "Official programme page"
+    }
+  ],
+  "programs": [
+    {
+      "id": "tsu-cs",
+      "university": "Ivane Javakhishvili Tbilisi State University",
+      "short": "TSU",
+      "faculty": "ზუსტ და საბუნებისმეტყველო მეცნიერებათა ფაკულტეტი",
+      "program": "კომპიუტერული მეცნიერება / Computer Science",
+      "cohort": "Official curriculum published 2021",
+      "totalEcts": 240,
+      "verification": "official",
+      "source": "https://tsu.ge/assets/media/files/71/academic/2021/502021_d1.pdf",
+      "freeCreditLimit": 20,
+      "courseMetadata": {
+        "CS102": {"category":"core","prerequisites":[],"learningOutcomes":["construct algorithms for introductory problems","implement and test structured programs"],"outcomeEvidence":"normalized-estimate"},
+        "CS104": {"category":"core","prerequisites":["CS102"],"learningOutcomes":["design programs using classes and objects","implement encapsulation and inheritance in C++"],"outcomeEvidence":"normalized-estimate"},
+        "CS105": {"category":"core","prerequisites":["CS102"],"learningOutcomes":["select data structures for computational problems","implement and analyze fundamental data structures"],"outcomeEvidence":"normalized-estimate"},
+        "CS200": {"category":"core","prerequisites":["CS104"],"learningOutcomes":["apply object oriented design in a modern language","build and test modular software"],"outcomeEvidence":"normalized-estimate"},
+        "CS202": {"category":"core","prerequisites":["CS104"],"learningOutcomes":["build standards based interactive web applications","explain client server web architecture"],"outcomeEvidence":"normalized-estimate"},
+        "CS203": {"category":"core","prerequisites":["CS104","MaTh201"],"learningOutcomes":["explain processor memory and instruction organization","analyze interaction between hardware and software"],"outcomeEvidence":"normalized-estimate"},
+        "CS302": {"category":"core","prerequisites":["CS104"],"learningOutcomes":["explain process memory and file management","analyze operating system resource allocation"],"outcomeEvidence":"normalized-estimate"},
+        "CS304": {"category":"core","prerequisites":["CS104"],"learningOutcomes":["design normalized relational databases","write queries and manage persistent data"],"outcomeEvidence":"normalized-estimate"},
+        "CS310": {"category":"core","prerequisites":["CS105","MaTh201"],"learningOutcomes":["select algorithms for computational problems","analyze correctness and computational complexity"],"outcomeEvidence":"normalized-estimate"},
+        "CS305": {"category":"core","prerequisites":["CS302"],"learningOutcomes":["explain layered network protocols","design and troubleshoot basic computer networks"],"outcomeEvidence":"normalized-estimate"},
+        "CS401": {"category":"core","prerequisites":["CS310","CS202"],"learningOutcomes":["apply a software development lifecycle","specify test and manage software requirements"],"outcomeEvidence":"normalized-estimate"},
+        "CS403": {"category":"core","prerequisites":["CS104"],"learningOutcomes":["model knowledge for intelligent systems","apply search and reasoning methods"],"outcomeEvidence":"normalized-estimate"}
+      },
+      "courses": [
+        ["CS101", "კომპიუტერული უნარ-ჩვევები და ინფორმაციული ტექნოლოგიები", 5, 1, ["information technology", "computer skills", "digital literacy"]],
+        ["CS102", "დაპროგრამების საფუძვლები", 5, 1, ["programming", "algorithms", "control flow", "functions"]],
+        ["MaTh101", "კალკულუსი", 5, 1, ["calculus", "limits", "derivatives", "integrals"]],
+        ["MaTh102", "წრფივი ალგებრა", 5, 1, ["linear algebra", "matrices", "vectors"]],
+        ["GE-EN1", "ინგლისური ენა 1", 5, 1, ["english", "communication", "writing"]],
+        ["S-INTRO", "ფიზიკის შესავალი", 5, 1, ["physics", "mechanics", "laboratory"]],
+        ["CS104", "ობიექტზე ორიენტირებული დაპროგრამება 1 (C++)", 5, 2, ["programming", "object oriented", "c++", "classes"]],
+        ["MaTh201", "დისკრეტული სტრუქტურები", 5, 2, ["discrete mathematics", "logic", "sets", "graphs"]],
+        ["CS105", "მონაცემთა სტრუქტურები", 5, 2, ["data structures", "algorithms", "trees", "graphs"]],
+        ["MaTh202", "კალკულუსი კომპიუტერული მეცნიერებისათვის", 5, 2, ["calculus", "computer science", "series"]],
+        ["GE-EN2", "ინგლისური ენა 2", 5, 2, ["english", "communication", "writing"]],
+        ["PH105", "ფიზიკა (მექანიკა)", 5, 2, ["physics", "mechanics", "laboratory"]],
+        ["CS200", "ობიექტზე ორიენტირებული დაპროგრამება 2 (C#, Java, Python)", 5, 3, ["programming", "object oriented", "java", "c#", "python"]],
+        ["CS202", "ვებ დაპროგრამება", 5, 3, ["web", "html", "css", "javascript"]],
+        ["CS302", "ოპერაციული სისტემები", 5, 3, ["operating systems", "processes", "memory", "file systems"]],
+        ["GE-EN3", "ინგლისური ენა 3 (ტექნიკური ინგლისური)", 5, 3, ["english", "technical communication", "writing"]],
+        ["PH106", "ფიზიკა (ელექტრომაგნიტიზმი)", 5, 3, ["physics", "electricity", "magnetism", "laboratory"]],
+        ["ELECT-3", "არჩევითი საგანი", 5, 3, ["elective"]],
+        ["CS304", "მონაცემთა ბაზები", 5, 4, ["databases", "sql", "relational model", "normalization"]],
+        ["CS205", "მონაცემთა ანალიზი და სტატისტიკა", 5, 4, ["data analysis", "statistics", "probability"]],
+        ["CS203", "კომპიუტერის ორგანიზაცია და არქიტექტურა", 5, 4, ["computer architecture", "processors", "memory", "assembly"]],
+        ["ELECT-4A", "არჩევითი საგანი A", 5, 4, ["elective"]],
+        ["ELECT-4B", "არჩევითი საგანი B", 5, 4, ["elective"]],
+        ["ELECT-4C", "არჩევითი საგანი C", 5, 4, ["elective"]],
+        ["CS512/505", "ფორმალური ენები და ავტომატები ან ფუნქციონალური დაპროგრამება", 5, 5, ["formal languages", "automata", "functional programming"]],
+        ["CS310", "ალგორითმები", 5, 5, ["algorithms", "complexity", "graphs", "dynamic programming"]],
+        ["CS303", "მოდელირება და სიმულაცია", 5, 5, ["modelling", "simulation", "statistics"]],
+        ["ELECT-5A", "არჩევითი საგანი A", 5, 5, ["elective"]],
+        ["ELECT-5B", "არჩევითი საგანი B", 5, 5, ["elective"]],
+        ["ELECT-5C", "არჩევითი საგანი C", 5, 5, ["elective"]],
+        ["CS416", "მათემატიკური დაპროგრამება", 5, 6, ["mathematical programming", "optimization"]],
+        ["CS411", "ალგორითმების ანალიზი და სირთულე", 5, 6, ["algorithms", "complexity", "analysis"]],
+        ["CS305", "ქსელური ტექნოლოგიები და კომუნიკაციები", 5, 6, ["networks", "tcp ip", "routing", "communications"]],
+        ["CS512/505-2", "ფორმალური ენები და ავტომატები ან ფუნქციონალური დაპროგრამება", 5, 6, ["formal languages", "automata", "functional programming"]],
+        ["ELECT-6A", "არჩევითი საგანი A", 5, 6, ["elective"]],
+        ["ELECT-6B", "არჩევითი საგანი B", 5, 6, ["elective"]],
+        ["CS401", "პროგრამული უზრუნველყოფის ინჟინერია", 5, 7, ["software engineering", "requirements", "testing", "project management"]],
+        ["CS417", "ოპერაციათა კვლევა", 5, 7, ["operations research", "optimization", "modelling"]],
+        ["CS402", "პროექტის წანამძღვარი", 5, 7, ["project", "research", "planning"]],
+        ["ELECT-7A", "არჩევითი საგანი A", 5, 7, ["elective"]],
+        ["ELECT-7B", "არჩევითი საგანი B", 5, 7, ["elective"]],
+        ["ELECT-7C", "არჩევითი საგანი C", 5, 7, ["elective"]],
+        ["CS403", "ინტელექტუალური სისტემები", 5, 8, ["artificial intelligence", "knowledge representation", "search"]],
+        ["CS404", "კომპიუტერული სამართალი და ეთიკა", 5, 8, ["computer law", "ethics", "privacy"]],
+        ["CS405", "ჯგუფური პროექტი", 5, 8, ["project", "teamwork", "software engineering"]],
+        ["ELECT-8A", "არჩევითი საგანი A", 5, 8, ["elective"]],
+        ["ELECT-8B", "არჩევითი საგანი B", 5, 8, ["elective"]],
+        ["ELECT-8C", "არჩევითი საგანი C", 5, 8, ["elective"]]
+      ]
+    },
+    {
+      "id": "gtu-cit",
+      "university": "Georgian Technical University",
+      "short": "GTU",
+      "faculty": "ინფორმატიკისა და მართვის სისტემების ფაკულტეტი",
+      "program": "კომპიუტერული ინფორმაციული ტექნოლოგიები / Computer Information Technologies",
+      "cohort": "2024/25 official curriculum",
+      "totalEcts": 240,
+      "verification": "official",
+      "source": "https://gtu.ge/pdf/programs/bach/ims/file13.pdf",
+      "freeCreditLimit": 15,
+      "courseMetadata": {
+        "CIT-05": {"category":"core","prerequisites":[],"learningOutcomes":["construct algorithms for introductory problems","implement and test programs in C and C++"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-10": {"category":"core","prerequisites":[],"learningOutcomes":["select data structures and algorithms for a problem","analyze basic algorithm efficiency"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-11": {"category":"core","prerequisites":[],"learningOutcomes":["explain process memory and file management","use operating system services"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-12": {"category":"core","prerequisites":[],"learningOutcomes":["build web pages using HTML CSS and JavaScript","implement interactive browser behavior"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-15": {"category":"core","prerequisites":[],"learningOutcomes":["design normalized relational databases","implement database queries in SQL"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-16": {"category":"core","prerequisites":[],"learningOutcomes":["explain fundamental artificial intelligence methods","apply search and basic machine learning techniques"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-17": {"category":"elective","prerequisites":[],"learningOutcomes":["design programs using classes and objects","implement modular software in Java or C sharp"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-21": {"category":"elective","prerequisites":[],"learningOutcomes":["build server side web applications","use a contemporary web framework"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-22": {"category":"elective","prerequisites":[],"learningOutcomes":["implement information system components","select an implementation technology for system requirements"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-23": {"category":"core","prerequisites":[],"learningOutcomes":["explain layered network protocols","configure a basic computer network"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-24": {"category":"elective","prerequisites":[],"learningOutcomes":[],"outcomeEvidence":"unavailable"},
+        "CIT-26": {"category":"elective","prerequisites":[],"learningOutcomes":["build and manage a web application using a content or application framework"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-31": {"category":"core","prerequisites":[],"learningOutcomes":["apply software engineering lifecycle practices","specify test and manage software requirements"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-32": {"category":"elective","prerequisites":[],"learningOutcomes":["design and implement a mobile application","use a mobile platform development lifecycle"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-41": {"category":"elective","prerequisites":[],"learningOutcomes":["apply distributed ledger or cloud computing concepts"],"outcomeEvidence":"normalized-estimate"},
+        "CIT-45": {"category":"elective","prerequisites":[],"learningOutcomes":[],"outcomeEvidence":"unavailable"}
+      },
+      "courses": [
+        ["CIT-01", "საინჟინრო მათემატიკა 1", 5, 1, ["engineering mathematics", "calculus", "functions"]],
+        ["CIT-02", "ზოგადი ფიზიკა A", 4, 1, ["physics", "mechanics", "laboratory"]],
+        ["CIT-03", "შესავალი ინფორმაციულ ტექნოლოგიებში", 4, 1, ["information technology", "computer skills", "systems"]],
+        ["CIT-04", "კომპიუტერის არქიტექტურა და ორგანიზაცია", 5, 1, ["computer architecture", "processors", "memory"]],
+        ["CIT-05", "დაპროგრამების საფუძვლები (C/C++-ის ბაზაზე)", 5, 1, ["programming", "c", "c++", "algorithms"]],
+        ["CIT-06", "აკადემიური წერის ელემენტები", 3, 1, ["academic writing", "research", "citation"]],
+        ["CIT-07", "ინგლისური ენა 1", 5, 1, ["english", "communication", "writing"]],
+        ["CIT-08", "საინჟინრო მათემატიკა 2", 5, 2, ["engineering mathematics", "calculus", "linear algebra"]],
+        ["CIT-09", "ზოგადი ფიზიკა B", 4, 2, ["physics", "electricity", "magnetism"]],
+        ["CIT-10", "მონაცემთა სტრუქტურები და ალგორითმები", 5, 2, ["data structures", "algorithms", "trees", "graphs"]],
+        ["CIT-11", "ოპერაციული სისტემების საფუძვლები", 5, 2, ["operating systems", "processes", "memory", "file systems"]],
+        ["CIT-12", "ვებ პროგრამირების საფუძვლები HTML5, CSS, JavaScript", 5, 2, ["web", "html", "css", "javascript"]],
+        ["CIT-13", "ინგლისური ენა 2", 5, 2, ["english", "communication", "writing"]],
+        ["CIT-14", "ინგლისური ენა 3", 5, 3, ["english", "technical communication"]],
+        ["CIT-15", "მონაცემთა ბაზების დაპროექტება და მართვა (SQL Server)", 5, 3, ["databases", "sql", "design", "normalization"]],
+        ["CIT-16", "ხელოვნური ინტელექტის საფუძვლები", 5, 3, ["artificial intelligence", "search", "machine learning"]],
+        ["CIT-17", "ობიექტ-ორიენტირებული დაპროგრამება (Java ან C#)", 5, 3, ["object oriented", "java", "c#", "classes"]],
+        ["CIT-18", "დაპროგრამება Python ენის ბაზაზე", 5, 3, ["programming", "python", "algorithms"]],
+        ["CIT-19", "ვებ დიზაინი (UI & UX)", 5, 3, ["web design", "ui", "ux", "accessibility"]],
+        ["CIT-20", "მონაცემთა ბაზების ადმინისტრირება (MS SQL)", 5, 4, ["databases", "sql", "administration"]],
+        ["CIT-21", "ვებ პროგრამირება (PHP, Django ან .NET)", 5, 4, ["web", "php", "django", ".net"]],
+        ["CIT-22", "ინფორმაციული სისტემების დაპროგრამება", 5, 4, ["information systems", "java", "c#", "python"]],
+        ["CIT-23", "კომპიუტერული ქსელების საფუძვლები", 5, 4, ["networks", "tcp ip", "routing", "protocols"]],
+        ["CIT-24", "ზოგადი არჩევითი", 5, 4, ["elective", "social science", "humanities"]],
+        ["CIT-25", "ინგლისური ენა 4", 5, 4, ["english", "professional communication"]],
+        ["CIT-26", "Laravel ან WordPress", 5, 5, ["web", "laravel", "wordpress", "php"]],
+        ["CIT-27", "IT სისტემების ანალიზი და დიზაინი", 5, 5, ["systems analysis", "design", "requirements"]],
+        ["CIT-28", "კომპიუტერული ქსელების ადმინისტრირება", 5, 5, ["networks", "administration", "security"]],
+        ["CIT-29", "არარელაციური მონაცემთა ბაზები", 5, 5, ["databases", "nosql", "data modelling"]],
+        ["CIT-30", "დისკრეტული მათემატიკის ელემენტები", 5, 5, ["discrete mathematics", "logic", "graphs"]],
+        ["CIT-F1", "თავისუფალი კომპონენტი 1", 5, 5, ["free elective"]],
+        ["CIT-31", "პროგრამული ინჟინერიის საფუძვლები", 5, 6, ["software engineering", "requirements", "testing"]],
+        ["CIT-32", "მობილური აპლიკაციების დაპროგრამება (Android ან iOS)", 5, 6, ["mobile", "android", "ios", "programming"]],
+        ["CIT-33", "დიდ მონაცემთა შენახვის და დამუშავების სისტემები", 5, 6, ["big data", "data processing", "storage"]],
+        ["CIT-34", "ნივთების ინტერნეტი", 5, 6, ["internet of things", "sensors", "networks"]],
+        ["CIT-35", "ინფორმაციული უსაფრთხოების საფუძვლები", 5, 6, ["information security", "cryptography", "risk"]],
+        ["CIT-36", "ადამიანურ-კომპიუტერული ინტერაქციები", 5, 6, ["human computer interaction", "ui", "ux"]],
+        ["CIT-37", "საწარმოო პრაქტიკა", 5, 7, ["professional practice", "project", "teamwork"]],
+        ["CIT-38", "ანალიტიკური სერვისები მონაცემთა ბაზებში", 5, 7, ["databases", "analytics", "business intelligence"]],
+        ["CIT-39", "პროექტების კომპიუტერული მართვა", 5, 7, ["project management", "planning", "software"]],
+        ["CIT-40", "კიბერუსაფრთხოების გამოწვევები", 5, 7, ["cybersecurity", "threats", "risk"]],
+        ["CIT-41", "ბლოკჩეინი ან ღრუბლოვანი და გრიდ ტექნოლოგიები", 5, 7, ["blockchain", "cloud", "grid computing"]],
+        ["CIT-F2", "თავისუფალი კომპონენტი 2", 5, 7, ["free elective"]],
+        ["CIT-42", "საბაკალავრო პროექტი", 10, 8, ["capstone", "project", "research"]],
+        ["CIT-43", "ინფორმაციული სისტემების მართვა — DevOps", 5, 8, ["devops", "information systems", "automation"]],
+        ["CIT-44", "ინფორმაციული ტექნოლოგიების სერვისების მართვა", 5, 8, ["it service management", "operations", "governance"]],
+        ["CIT-45", "სპეციალობის არჩევითი", 5, 8, ["cryptography", "networks", "artificial intelligence", "oracle"]],
+        ["CIT-F3", "თავისუფალი კომპონენტი 3", 5, 8, ["free elective"]]
+      ]
+    }
+  ],
+  "universities": [
+    {
+      "id": "TSU",
+      "name": "Ivane Javakhishvili Tbilisi State University",
+      "faculties": [
+        {
+          "id": "tsu-exact",
+          "name": "ზუსტ და საბუნებისმეტყველო მეცნიერებათა ფაკულტეტი",
+          "specialties": [
+            {"id": "tsu-cs", "name": "კომპიუტერული მეცნიერება / Computer Science", "programId": "tsu-cs", "verification": "official"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GTU",
+      "name": "Georgian Technical University",
+      "faculties": [
+        {
+          "id": "gtu-ims",
+          "name": "ინფორმატიკისა და მართვის სისტემების ფაკულტეტი",
+          "specialties": [
+            {"id": "gtu-cit", "name": "კომპიუტერული ინფორმაციული ტექნოლოგიები / Computer Information Technologies", "programId": "gtu-cit", "verification": "official"}
+          ]
+        }
+      ]
+    }
+  ]
+}
